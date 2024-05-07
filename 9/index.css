@@ -84,6 +84,8 @@ main {
 
 .works,
 .aboutme {
+  container-name: section;
+  container-type: inline-size;
   align-items: start;
   background-color: #f6f6f6;
   padding: 36px;
