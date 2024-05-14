@@ -1,0 +1,281 @@
+@charset "utf-8";
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #0e0f16;
+  line-height: 1.6;
+  background-color: #b8bec0;
+}
+
+@media (max-width: 496px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+header {
+  container-name: header;
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background: url(./images/top-book.png), url(./images/top-background.png);
+  background-size: clamp(800px, 100vw, 1000px) auto, auto 100vh;
+  background-position: center;
+  background-repeat: no-repeat, repeat-x;
+}
+
+header h1 {
+  display: block;
+  width: 150px;
+  margin-top: 168px;
+  margin-bottom: 16px;
+}
+
+header ul {
+  display: flex;
+  column-gap: 48px;
+}
+
+header li {
+  display: block;
+  width: 30px;
+}
+
+main {
+  display: grid;
+  /* 236px = 320px - 左右のマージン84px (42px*2) */
+  grid-template-columns:repeat(auto-fit, minmax(236px, 1fr));
+  column-gap: 42px;
+  row-gap: 48px;
+  padding: 42px;
+}
+
+@media (max-width: 496px) {
+  main {
+    column-gap: 24px;
+    row-gap: 32px;
+    padding-inline: 24px;
+  }
+}
+
+.works,
+.aboutme {
+  container-name: section;
+  container-type: inline-size;
+  align-items: start;
+  background-color: #f6f6f6;
+  padding: 36px;
+}
+
+.aboutme-logo {
+  display: block;
+  width: 200px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-bottom: 42px;
+}
+
+.name {
+  font-size: 20px;
+}
+
+@media (max-width: 496px) {
+  .name {
+    font-size: 16px;
+  }
+}
+
+.name span {
+  display: inline-block;
+}
+
+@container (max-width: 300px){
+  .name span {
+    display: block;
+  }
+  .name .name-separator {
+    display: none;
+  }
+}
+
+
+.aboutme h2,
+.works h2 {
+  font-family: 'Cardo', serif;
+  font-size: clamp(24px, 15cqi, 36px);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+section h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 42px;
+  margin-bottom: 16px;
+}
+
+section h4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #6e7172;
+}
+
+.history {
+  display: grid;
+  grid-template-columns: 1fr 4fr ;
+  column-gap: 16px;
+  row-gap: 16px;
+}
+
+.skill {
+  display: grid;
+  row-gap: 16px;
+}
+
+.skill li {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  column-gap: 16px;
+  align-items: center;
+}
+
+.skill-name {
+  width: 150px;
+}
+
+.skill-level {
+  flex-grow: 1;
+  min-width: 160px;
+  max-width: 320px;
+}
+
+.skill-level img {
+  display: block;
+  width: 100%;
+  height: 4px;
+}
+
+
+.works-logo {
+  display: block;
+  width: 140px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-bottom: 42px;
+}
+
+.works .works-list {
+  container-name: works-list;
+  container-type: inline-size;
+  display: grid;
+  row-gap: 42px;
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+
+.works .works-listItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  font-size: 36px;
+  font-weight: 500;
+  color: #f6f6f6;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.works .works-listItem.-uidesign {
+  background-image: url(./images/uidesign.png);
+}
+
+.works .works-listItem.-painting {
+  background-image: url(./images/painting.png);
+}
+
+.works .works-listItem.-embroidery {
+  background-image: url(./images/embroidery.png);
+}
+
+.works .works-listItem a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: clamp(24px, 15cqi, 36px);
+}
+
+footer {
+  container-name: footer;
+  container-type: inline-size;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f6f6f6;
+  align-items: center;
+  column-gap: 24px;
+  padding: 24px 42px;
+}
+
+@container (max-width: 378px) {
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.footer-separator {
+  width: 1px;
+  height: 48px;
+  align-self: flex-start;
+  background-color: #b8bec0;
+}
+
+@container (max-width: 300px) {
+  .footer-separator {
+    display: none;
+  }
+}
+
+footer p {
+  display:block;
+  width: 100px;
+}
+
+footer ul {
+  display: flex;
+  column-gap: 16px;
+}
+
+footer li {
+  display: block;
+  width: 25px;
+}
